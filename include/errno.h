@@ -3,4 +3,6 @@
 
 extern int errno;
 
+#include <internal/errno.h>
+
 #endif //_ERRNO_H_
