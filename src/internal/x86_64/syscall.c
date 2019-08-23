@@ -1,4 +1,4 @@
-__attribute__((naked)) long __syscall(long call, long arg1, long arg2, long arg3, long arg4, long arg5, long arg6)
+__attribute__((naked)) long (__syscall)(long call, long arg1, long arg2, long arg3, long arg4, long arg5, long arg6)
 {
     __asm__ __volatile__
     (
