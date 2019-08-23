@@ -22,5 +22,11 @@ typedef int pid_t;
 #ifdef __INCLUDE_INTPTR_T
 typedef long int intptr_t;
 #endif
+#ifdef __INCLUDE_PTRDIFF_T
+typedef long int ptrdiff_t;
+#endif
+#ifdef __INCLUDE_WCHAR_T
+typedef int wchar_t;
+#endif
 
 #endif //_TYPES_H_
