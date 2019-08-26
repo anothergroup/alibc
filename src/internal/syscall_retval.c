@@ -4,7 +4,7 @@
 long __syscall_retval(unsigned long retval)
 {
     if ((signed long) retval < 0 && (signed long) retval > -4096) {
-        // errno = -retval
+        errno = (int) -retval;
         return -1;
     }
     return (signed long) retval;

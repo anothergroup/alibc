@@ -3,6 +3,6 @@
 
 _Noreturn void _Exit(int code)
 {
-    __syscall(60, code);
-    for (;;) __syscall(60, code);
+    __syscall(SYS_exit_group, code);
+    for (;;) __syscall(SYS_exit, code);
 }
