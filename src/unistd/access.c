@@ -5,8 +5,8 @@
 int access(const char *path, int amode)
 {
 #ifdef SYS_access
-    return __syscall(SYS_access, (intptr_t)path, amode);
+    return syscall(SYS_access, path, amode);
 #else
-    return __syscall(SYS_faccessat, AT_FDCWD, filename, amode, 0);
+    return syscall(SYS_faccessat, AT_FDCWD, filename, amode, 0);
 #endif
 }

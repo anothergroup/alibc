@@ -98,9 +98,18 @@ size_t confstr(int, char *, size_t);
 int dup(int);
 int dup2(int, int);
 _Noreturn void _exit(int);
-int execl(const char *, const char *, ...);
-int execle(const char *, const char *, ...);
-int execlp(const char *, const char *, ...);
+
+enum __exec_type_e
+{
+  __USE_EXECV,
+  __USE_EXECVP,
+  __USE_EXECVE
+};
+int execl(enum __exec_type_e, const char *, const char *, ...);
+#define execle(path, argv0, ...) execl(__USE_EXECVE, file, argv0, __VA_ARGS__)
+#define execlp(file, argv0, ...) execl(__USE_EXECVP, file, argv0, __VA_ARGS__)
+#define execl(path, argv0, ...) execl(__USE_EXECV, path, argv0, __VA_ARGS__)
+
 int execv(const char *, char *const []);
 int execve(const char *, char *const [], char *const []);
 int execvp(const char *, char *const []);

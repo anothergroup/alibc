@@ -1,6 +1,3 @@
-#ifndef _TYPES_H_
-#define _TYPES_H_
-
 #ifdef __INCLUDE_SIZE_T
 typedef unsigned long int size_t;
 #endif
@@ -28,5 +25,6 @@ typedef long int ptrdiff_t;
 #ifdef __INCLUDE_WCHAR_T
 typedef int wchar_t;
 #endif
-
-#endif //_TYPES_H_
+#ifdef __INCLUDE_VA_LIST
+typedef __builtin_va_list va_list;
+#endif
